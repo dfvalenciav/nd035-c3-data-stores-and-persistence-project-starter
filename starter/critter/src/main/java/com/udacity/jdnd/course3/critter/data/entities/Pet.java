@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Pet implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private PetType type;
     private String name;
