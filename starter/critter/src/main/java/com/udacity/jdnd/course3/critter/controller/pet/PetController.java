@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Handles web requests related to Pets.
@@ -29,17 +30,19 @@ public class PetController {
 
     @GetMapping("/{petId}")
     public PetDTO getPet(@PathVariable long petId) {
-        throw new UnsupportedOperationException();
+        return getPetDto(petsService.getPetById(petId));
     }
 
     @GetMapping
     public List<PetDTO> getPets(){
-        throw new UnsupportedOperationException();
+        List<Pet> pets = petsService.getAllPets();
+        return pets.stream().map(this::getPetDto).collect(Collectors.toList());
     }
 
     @GetMapping("/owner/{ownerId}")
     public List<PetDTO> getPetsByOwner(@PathVariable long ownerId) {
-        throw new UnsupportedOperationException();
+        List<Pet> pets = petsService.getPetsByCustomerId(ownerId);
+        return pets.stream().map(this::getPetDto).collect(Collectors.toList());
     }
 
     public PetDTO getPetDto(Pet pet){
