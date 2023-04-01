@@ -33,10 +33,10 @@ import java.util.stream.IntStream;
  * These tests should all pass once the project is complete.
  */
 @Transactional
-@SpringBootTest(classes = {
+/*@SpringBootTest(classes = {
         CritterApplication.class,
         H2DatabaseConfig.class
-})
+})*/
 public class CritterFunctionalTest {
     @Autowired
     private UserController userController;

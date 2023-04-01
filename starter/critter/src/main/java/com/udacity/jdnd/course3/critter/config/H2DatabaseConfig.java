@@ -18,7 +18,7 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackages = { "com.udacity.jdnd.course3.critter" })
 @EnableTransactionManagement
 public class H2DatabaseConfig {
-    @Bean
+/*    @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
@@ -47,5 +47,5 @@ public class H2DatabaseConfig {
         final JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
-    }
+    }*/
 }

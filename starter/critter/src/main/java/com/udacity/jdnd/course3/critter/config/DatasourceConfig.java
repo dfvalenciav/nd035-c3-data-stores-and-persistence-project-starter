@@ -9,12 +9,12 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatasourceConfig {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/critter?serverTimezone=UTC";
+/*    private static final String DB_URL = "jdbc:mysql://localhost:3306/critter?serverTimezone=UTC";
 
     @Bean
     @ConfigurationProperties(prefix = "critter.datasource")
     public DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         return dataSourceBuilder.url(DB_URL).build();
-    }
+    }*/
 }
